@@ -7,4 +7,8 @@
     <RuntimeVersion>8.1</RuntimeVersion>
     <WebRoot>public</WebRoot>
   </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="NewFolder\" />
+    <Folder Include="resources\views\components\" />
+  </ItemGroup>
 </Project>
