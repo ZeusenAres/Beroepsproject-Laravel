@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
-<x-app-layout>
+<head>
+    <x-app-layout></x-app-layout>
+</head>
+<body>
 
-</x-app-layout>
+</body>
 </html>
