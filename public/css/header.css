@@ -1,5 +1,22 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans';
+}
+
 .header {
-    height: 250px;
+    height: 150px;
     width: 100%;
     background-color: aliceblue;
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+    text-decoration: none;
 }
+
+.header a {
+    margin-top: 50px;
+    margin-right: 5px;
+}
+
+

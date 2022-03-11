@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <x-app-layout></x-app-layout>
+    @include('Stylesheets.stylesheets')
 </head>
 <body>
-
+    @include('Header.header')
+    <div class="homebox">
+        
+    </div>
 </body>
 </html>
