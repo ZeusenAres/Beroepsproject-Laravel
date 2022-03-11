@@ -5,18 +5,22 @@ body {
 }
 
 .header {
-    height: 150px;
+    height: 125px;
     width: 100%;
     background-color: aliceblue;
     display: flex;
     justify-content: center;
     justify-content: space-evenly;
-    text-decoration: none;
 }
 
 .header a {
-    margin-top: 50px;
-    margin-right: 5px;
+    margin-top: 35px;
+    margin-right: 275px;
+    font-size: 20px;
+    font-weight: 800;
+    text-decoration: none;
 }
 
-
+a img{
+    align-items: center;
+}

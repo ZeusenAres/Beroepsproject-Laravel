@@ -1,4 +1,10 @@
 <!DOCTYPE html>
 <html>
-<x-app-layout></x-app-layout>
+<head>
+    @include('Stylesheets.stylesheets')
+</head>
+<body>
+    @include('Header.header')
+    <div class="homebox margin">cat</div>
+</body>
 </html>
