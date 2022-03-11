@@ -9,5 +9,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Folder Include="resources\views\components\" />
+    <Folder Include="resources\views\Header\" />
+    <Folder Include="resources\views\Footer\" />
   </ItemGroup>
 </Project>
