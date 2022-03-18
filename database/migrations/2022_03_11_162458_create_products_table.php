@@ -23,6 +23,7 @@ class CreateProductsTable extends Migration
             $table->text('image');
             $table->integer('amount');
             $table->timestamps();
+            $table->foreign('category_id')->references('id')->on('categories');
         });
     }
 
@@ -33,6 +34,6 @@ class CreateProductsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Products');
+        Schema::dropIfExists('products');
     }
 }
