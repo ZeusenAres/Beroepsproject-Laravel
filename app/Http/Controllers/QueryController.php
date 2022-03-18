@@ -1,14 +1,15 @@
 <?php
-namespace app\Http\Controllers;
+namespace App\Http\Controllers;
+use App\Models\Products;
 use Illuminate\Routing\Controller;
-use app\Models\products;
+use App\Models\Categories;
 
 class QueryController extends Controller
 {
     public function randomQuery()
     {
-        $query = products::all();
-        return view('welcome', ['name' => $query]);
+        $result = Products::all();
+        return view('welcome', ['categories' => $result]);
     }
 }
 ?>

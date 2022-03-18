@@ -8,9 +8,9 @@
     <div class="homebox margin">
         welc
 
-        @foreach($query as $query)
-            {{$query}}
-        @foreach
+        @foreach ($categories as $category)
+            {{ $category->name }}
+        @endforeach
     </div>
 </body>
 </html>
