@@ -13,7 +13,7 @@ body {
     justify-content: space-evenly;
 }
 
-.header a {
+.header a, p {
     margin-top: 35px;
     margin-right: 275px;
     font-size: 20px;
@@ -35,4 +35,17 @@ a:focus {
 
 a img {
     align-items: center;
+}
+
+p {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    width: 100%;
+    height: 150px;
+    z-index: 1;
 }

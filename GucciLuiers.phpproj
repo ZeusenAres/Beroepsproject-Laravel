@@ -8,6 +8,7 @@
     <WebRoot>public</WebRoot>
   </PropertyGroup>
   <ItemGroup>
+    <Folder Include="NewFolder\" />
     <Folder Include="resources\views\components\" />
   </ItemGroup>
 </Project>

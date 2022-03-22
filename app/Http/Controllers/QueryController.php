@@ -8,8 +8,8 @@ class QueryController extends Controller
 {
     public function randomQuery()
     {
-        $result = Products::all();
-        return view('welcome', ['categories' => $result]);
+        $result = Categories::all();
+        return view('Header/header', ['categories' => $result]);
     }
 }
 ?>
