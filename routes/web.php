@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\QueryController;
 
@@ -14,7 +15,7 @@ use App\Http\Controllers\QueryController;
 |
 */
 
-Route::get('/', [QueryController::class, 'randomQuery']);
+Route::get('/', [QueryController::class, 'getCategory']);
 
 Route::get('/product', function () {
     return view('product');
@@ -28,6 +29,4 @@ Route::get('/cart', function () {
     return view('cart');
 });
 
-Route::get('/contact', function () {
-    return view('contact');
-});
+Route::get('/contact', [QueryController::class, 'getCategory']);

@@ -6,7 +6,7 @@
         <p>Assortment</p>
         <div class="dropdown-content">
             @foreach($categories as $category)
-                {{ $category->name }}
+                <a href="{{url('category')}}">{{$category->name}}</a>
             @endforeach
         </div>
     </div>
