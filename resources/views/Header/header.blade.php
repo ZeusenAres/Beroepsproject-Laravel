@@ -6,10 +6,11 @@
         <p>Assortment</p>
         <div class="dropdown-content">
             @foreach($categories as $category)
-                <a href="{{url('category')}}">{{$category->name}}</a>
+                <a class="" href="{{url('category')}}">{{$category->name}}</a>
             @endforeach
         </div>
     </div>
     <a href="{{url('contact')}}">Contact</a>
+    <a href="{{url('about')}}">About Us</a>
     <a href="{{url('cart')}}"><img src="images/shoppingcart.png" width="25" height="25"/></a>
 </nav>

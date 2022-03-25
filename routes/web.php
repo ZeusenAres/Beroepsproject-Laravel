@@ -30,3 +30,4 @@ Route::get('/cart', function () {
 });
 
 Route::get('/contact', [QueryController::class, 'getCategory']);
+Route::get('/contact', [ContactController::class, 'index']);

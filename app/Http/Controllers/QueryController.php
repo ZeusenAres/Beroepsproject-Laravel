@@ -6,10 +6,16 @@ use App\Models\Categories;
 
 class QueryController extends Controller
 {
+    private $result;
+
+    public function __construct()
+    {
+        $this->result = Categories::all();
+    }
+
     public function getCategory()
     {
-        $result = Categories::all();
-        return view('Header/header', ['categories' => $result]);
+        return view('Header/header', ['categories' => $this->result]);
     }
 }
 ?>
