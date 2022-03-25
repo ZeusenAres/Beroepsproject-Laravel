@@ -1,6 +1,9 @@
 <?php
 
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\QueryController;
 
@@ -15,23 +18,18 @@ use App\Http\Controllers\QueryController;
 |
 */
 
-Route::get('/', [QueryController::class, 'getCategory']);
-
 Route::get('/product', function () {
     return view('product');
 });
 
-Route::get('/category', function () {
-    return view('category');
-});
+Route::get('/', [HomeController::class, 'index']);
+Route::get('/', [QueryController::class, 'getCategory']);
 
-Route::get('/cart', function () {
-    return view('cart');
-});
+Route::get('/category', [CategoryController::class, 'index']);
+Route::get('/category', [QueryController::class, 'getCategory']);
 
-Route::get('/about', function () {
-    return view('about');
-});
+Route::get('/about', [AboutController::class, 'index']);
+Route::get('/about', [QueryController::class, 'getCategory']);
 
-Route::get('/contact', [QueryController::class, 'getCategory']);
 Route::get('/contact', [ContactController::class, 'index']);
+Route::get('/contact', [QueryController::class, 'getCategory']);

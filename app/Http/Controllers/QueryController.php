@@ -4,6 +4,8 @@ use App\Models\Products;
 use Illuminate\Routing\Controller;
 use App\Models\Categories;
 
+require_once('QueryController.php');
+
 class QueryController extends Controller
 {
     private $result;

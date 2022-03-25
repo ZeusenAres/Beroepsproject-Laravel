@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Http\Request;
 use App\Models\Categories;
 
-class ContactController extends Controller
+class HomeController extends Controller
 {
     private $result;
 
@@ -14,6 +15,6 @@ class ContactController extends Controller
 
     public function index()
     {
-        return view('contact', ['categories' => $this->result]);
+        return view('welcome', ['categories' => $this->result]);
     }
 }
