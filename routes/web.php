@@ -29,5 +29,9 @@ Route::get('/cart', function () {
     return view('cart');
 });
 
+Route::get('/about', function () {
+    return view('about');
+});
+
 Route::get('/contact', [QueryController::class, 'getCategory']);
 Route::get('/contact', [ContactController::class, 'index']);
