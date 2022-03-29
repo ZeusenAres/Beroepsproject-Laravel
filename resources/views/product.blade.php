@@ -5,6 +5,5 @@
 </head>
 <body>
     @include('Header.header')
-    <div class="homebox margin">prod</div>
 </body>
 </html>

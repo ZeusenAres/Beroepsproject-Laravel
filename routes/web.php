@@ -18,18 +18,18 @@ use App\Http\Controllers\QueryController;
 |
 */
 
-Route::get('/product', function () {
-    return view('product');
-});
+Route::get('/product', [QueryController::class, 'getCategory']);
 
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/cart', [QueryController::class, 'getCategory']);
+
 Route::get('/', [QueryController::class, 'getCategory']);
+Route::get('/', [HomeController::class, 'index']);
 
-Route::get('/category', [CategoryController::class, 'index']);
 Route::get('/category', [QueryController::class, 'getCategory']);
+Route::get('/category', [CategoryController::class, 'index']);
 
-Route::get('/about', [AboutController::class, 'index']);
-Route::get('/about', [QueryController::class, 'getCategory']);
-
-Route::get('/contact', [ContactController::class, 'index']);
 Route::get('/contact', [QueryController::class, 'getCategory']);
+Route::get('/contact', [ContactController::class, 'index']);
+
+Route::get('/about', [QueryController::class, 'getCategory']);
+Route::get('/about', [AboutController::class, 'index']);

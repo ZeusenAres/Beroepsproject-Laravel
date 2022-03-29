@@ -1,5 +1,11 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .homebox {
-    width: 550px;
+    width: 1900px;
     height: 550px;
     background-color: purple;
 }
