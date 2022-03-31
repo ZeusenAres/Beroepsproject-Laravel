@@ -6,11 +6,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Products;
 
-class Categories extends Model
+class Brands extends Model
 {
     use HasFactory;
 
-    protected $table = 'categories';
     protected $fillable = ['name'];
 
     public function products()
