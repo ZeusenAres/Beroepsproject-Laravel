@@ -19,7 +19,7 @@ class CategoryController extends Controller
     public function index()
     {
         $id = request('id');
-        $products = $this->products = Products::find($id);
+        $products = $this->products = Products::all()->find($id);
         return view('category', [
             'categories' => $this->result,
             'id' => $id,

@@ -5,6 +5,11 @@
 </head>
 <body>
     @include('Header.header')
-    {{ $products->name }}
+    <div class="category-box">
+        {{ $products->name }}<br />
+        <img src="{{url($products->image)}}" /><br />
+        €{{ $products->price }}<br />
+        {{ $products->description }}<br />
+    </div>
 </body>
 </html>
