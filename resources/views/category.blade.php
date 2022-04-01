@@ -6,10 +6,15 @@
 <body>
     @include('Header.header')
     <div class="category-box">
-        {{ $products->name }}<br />
-        <img src="{{url($products->image)}}" /><br />
-        €{{ $products->price }}<br />
-        {{ $products->description }}<br />
+        @foreach($products as $products)
+            <a href="{{url('product?prod_id=' . $products->id)}}" class="product_details">
+                <img class="product_img" src="{{url($products->image)}}" /><br />
+                <div class="specs">
+                    {{ $products->name }}<br />
+                    €{{ $products->price }}
+                </div>
+            </a>
+        @endforeach
     </div>
 </body>
 </html>

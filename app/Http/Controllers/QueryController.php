@@ -14,7 +14,6 @@ class QueryController extends Controller
     public function __construct()
     {
         $this->categories = Categories::all();
-        $this->products = Products::select('name')->join('categories', 'category.category_id', '=', 'category.id')->where('category.name', $category)->get();
     }
 
     public function getCategory()

@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Categories;
 use Illuminate\Support\Facades\DB;
 
-class CategoryController extends Controller
+class ProductController extends Controller
 {
     private $result;
     private $products;
@@ -18,11 +17,11 @@ class CategoryController extends Controller
 
     public function index()
     {
-        $id = request('cat_id');
-        $products = $this->products = DB::table('products')->where('category_id', '=', $id)->get();
-        return view('category', [
+        $id = request('prod_id');
+        $product = $this->products = DB::table('products')->where('id', '=', $id)->get();
+        return view('product', [
             'categories' => $this->result,
-            'products' => $products
+            'product' => $product
             ]);
     }
 }

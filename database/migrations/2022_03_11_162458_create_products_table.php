@@ -17,13 +17,17 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->string('name');
             $table->float('price');
-            $table->bigInteger('brand_id');
-            $table->bigInteger('type_id');
-            $table->bigInteger('category_id');
+            $table->bigInteger('brand_id')->unsigned();
+            $table->bigInteger('type_id')->unsigned();
+            $table->bigInteger('category_id')->unsigned();
             $table->text('description');
             $table->text('image');
             $table->integer('amount');
             $table->timestamps();
+
+            $table->index('brand_id');
+            $table->index('type_id');
+            $table->index('category_id');
         });
     }
 
