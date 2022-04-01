@@ -5,5 +5,6 @@
 </head>
 <body>
     @include('Header.header')
+    {{ $products->name }}
 </body>
 </html>

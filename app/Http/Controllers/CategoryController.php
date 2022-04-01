@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Categories;
+use App\Models\Products;
 
 class CategoryController extends Controller
 {
     private $result;
+    private $products;
 
     public function __construct()
     {
@@ -16,6 +18,12 @@ class CategoryController extends Controller
 
     public function index()
     {
-        return view('category', ['categories' => $this->result]);
+        $id = request('id');
+        $products = $this->products = Products::find($id);
+        return view('category', [
+            'categories' => $this->result,
+            'id' => $id,
+            'products' => $products
+            ]);
     }
 }
