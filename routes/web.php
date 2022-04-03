@@ -5,6 +5,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CartController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\QueryController;
 
@@ -23,6 +24,7 @@ Route::get('/product', [QueryController::class, 'getCategory']);
 Route::get('/product', [ProductController::class, 'index']);
 
 Route::get('/cart', [QueryController::class, 'getCategory']);
+Route::get('/cart', [CartController::class, 'index']);
 
 Route::get('/', [QueryController::class, 'getCategory']);
 Route::get('/', [HomeController::class, 'index']);

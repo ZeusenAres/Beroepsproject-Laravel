@@ -21,6 +21,7 @@ class ProductController extends Controller
         $product = $this->products = DB::table('products')->where('id', '=', $id)->get();
         return view('product', [
             'categories' => $this->result,
+            'id' => $id,
             'product' => $product
             ]);
     }

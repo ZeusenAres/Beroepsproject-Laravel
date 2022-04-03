@@ -6,13 +6,13 @@
 <body>
     @include('Header.header')
     @foreach($product as $product)
-        <form action="{{url('product')}}" method="dialog">
-            <input value="{{ $product->name }}" readonly/><br />
-            <img src="{{ $product->image }}" /><br />
-            <input value="{{'€' . $product->price }}" readonly/><br />
-            <input name="submit" type="submit" value="Add to Cart" />
-        </form><br />
+        <h1>{{ $product->name }}</h1><br />
+        <img class="prod-img" src="{{ $product->image }}" /><h3>{{ '€' . $product->price }}</h3><br />
+        <a href="{{url('cart?prod_id=' . $id)}}">
+            Add to cart
+        </a>
         <section>{{ $product->description }}</section>
     @endforeach
-</body>
+    
+    </body>
 </html>
