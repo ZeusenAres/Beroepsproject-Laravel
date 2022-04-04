@@ -6,21 +6,30 @@
 <body>
     @include('Header.header')
     <table>
-        @foreach(Session::get('cart') as $cartContent)
-            @foreach(DB::table('products')->where('id', '=', $cartContent)->get() as $cart)
-            <tr class="cart-row">
+            @foreach(Session::get('cart') as $cartContent)
+                @foreach(DB::table('products')->where('id', '=', $cartContent)->get() as $cart)
+                    <tr class="cart-row">
+                        <td>
+                            <img class="cart-image" src="{{ $cart->image }}" />
+                        </td>
+                        <td>
+                            {{ $cart->name }}<br />
+                            {{ '€' . $cart->price }}
+                        </td>
+                    </tr>
+                @endforeach
+            @endforeach
+            <tr>
                 <td>
-                    <img class="cart-image" src="{{ $cart->image }}" />
-                </td>
-                <td>
-                    {{ $cart->name }}<br />
-                </td>
-                <td>
-                    {{ '€' . $cart->price }}
+                    <form action="#" method="get">
+                        <input name="empty-cart" type="submit" value="Delete cart" />
+                    </form>
+                    @if(isset($_GET['empty-cart']))
+                    <?php Session::flush('cart') ?>
+                    @endif
                 </td>
             </tr>
-            @endforeach
-        @endforeach
+            
     </table>
 </body>
 </html>
