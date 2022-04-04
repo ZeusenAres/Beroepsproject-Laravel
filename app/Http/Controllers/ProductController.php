@@ -8,7 +8,6 @@ use Illuminate\Support\Facades\DB;
 class ProductController extends Controller
 {
     private $result;
-    private $products;
 
     public function __construct()
     {

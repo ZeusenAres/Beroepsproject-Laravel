@@ -14,6 +14,3 @@
     <a href="{{url('about')}}">About Us</a>
     <a href="{{url('cart')}}"><img src="images/shoppingcart.png" width="25" height="25"/></a>
 </nav>
-<?php
-session_start();
-?>

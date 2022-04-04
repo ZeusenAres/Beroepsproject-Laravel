@@ -2,14 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Categories;
 use App\Models\Products;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\DB;
 
 class CartController extends Controller
 {
     private $result;
+
+    private $cart;
 
     public function __construct()
     {
@@ -20,8 +22,15 @@ class CartController extends Controller
     {
         $productIds = request('prod_id');
         Session::push('cart', $productIds);
-        return view('cart', [
-            'categories' => $this->result
+        foreach(Session::get('cart') as $content)
+        {
+            $product = $this->products = DB::table('products')->where('id', '=', $content)->get();
+
+            return view('cart', [
+            'categories' => $this->result,
+            'content' => $this->cart,
+            'shoppingCart' => $product
             ]);
+        }
     }
 }
