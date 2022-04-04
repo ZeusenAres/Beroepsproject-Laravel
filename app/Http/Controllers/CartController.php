@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Categories;
 use App\Models\Products;
+use Illuminate\Support\Facades\Session;
 
 class CartController extends Controller
 {
@@ -18,9 +19,9 @@ class CartController extends Controller
     public function index()
     {
         $productIds = request('prod_id');
+        Session::push('cart', $productIds);
         return view('cart', [
-            'categories' => $this->result,
-            'content' => $productIds
+            'categories' => $this->result
             ]);
     }
 }

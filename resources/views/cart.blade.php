@@ -5,13 +5,8 @@
 </head>
 <body>
     @include('Header.header')
-    <?php
-    $cart = [$content];
-    while(count($cart) >= 1)
-    {
-        array_push($cart);
-    }
-    print_r($cart);
-    ?>
-</body>
+    @foreach(Session::get('cart') as $cart)
+        {{ $cart }}<br />
+    @endforeach
+    </body>
 </html>
