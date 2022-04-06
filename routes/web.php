@@ -21,6 +21,7 @@ use App\Http\Controllers\QueryController;
 */
 
 Route::get('/product', [QueryController::class, 'getCategory']);
+Route::get('/cart', [CartController::class, 'getCart']);
 Route::get('/product', [ProductController::class, 'index']);
 
 Route::get('/cart', [QueryController::class, 'getCategory']);

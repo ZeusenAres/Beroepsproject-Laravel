@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Products;
 use Illuminate\Http\Request;
 use App\Models\Categories;
 use Illuminate\Support\Facades\DB;
@@ -19,7 +20,7 @@ class CategoryController extends Controller
     public function index()
     {
         $id = request('cat_id');
-        $products = $this->products = DB::table('products')->where('category_id', '=', $id)->get();
+        $products = Products::all()->where('category_id', $id);
         return view('category', [
             'categories' => $this->result,
             'products' => $products

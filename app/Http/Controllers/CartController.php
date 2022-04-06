@@ -22,15 +22,9 @@ class CartController extends Controller
     {
         $productIds = request('prod_id');
         Session::push('cart', $productIds);
-        foreach(Session::get('cart') as $content)
-        {
-            $product = $this->products = DB::table('products')->where('id', '=', $content)->get();
 
-            return view('cart', [
-            'categories' => $this->result,
-            'content' => $this->cart,
-            'shoppingCart' => $product
+        return view('cart', [
+            'categories' => $this->result
             ]);
-        }
     }
 }
