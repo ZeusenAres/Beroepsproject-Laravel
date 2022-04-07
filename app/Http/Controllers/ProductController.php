@@ -14,7 +14,7 @@ class ProductController extends Controller
     public function __construct()
     {
         $this->result = Categories::all();
-        $this->products = Products::all();
+        $this->products = Products::with(['category', 'brand', 'type'])->get();
     }
 
     public function index()

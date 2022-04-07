@@ -12,14 +12,17 @@ class Products extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['brand_id', 'category_id'];
-
-    public function categories()
+    public function category()
     {
         return $this->belongsTo(Categories::class);
     }
 
-    public function brands()
+    public function brand()
+    {
+        return $this->belongsTo(Brands::class);
+    }
+
+    public function type()
     {
         return $this->belongsTo(Brands::class);
     }

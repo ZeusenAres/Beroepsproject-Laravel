@@ -17,9 +17,20 @@
                         {{ '€' . $cart->price }}
                     </td>
                 </tr>
+                @php($total += $cart->price)
             @endforeach
         @endforeach
-        
+        <tr>
+            <td>
+                <h3><b>Totaal</b></h3>
+            </td>
+        </tr>
+        <tr>
+            <td class="cart-image">
+                {{ '€' . $total }}
+            </td>
+
+        </tr>
         <tr>
             <td>
                 <form action="#" method="get">

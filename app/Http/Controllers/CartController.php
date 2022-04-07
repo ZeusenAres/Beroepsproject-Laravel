@@ -3,9 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Categories;
-use App\Models\Products;
 use Illuminate\Support\Facades\Session;
-use Illuminate\Support\Facades\DB;
 
 class CartController extends Controller
 {
@@ -13,9 +11,12 @@ class CartController extends Controller
 
     private $cart;
 
+    private $total;
+
     public function __construct()
     {
         $this->result = Categories::all();
+        $this->cart = Session::get('cart');
     }
 
     public function index()
@@ -24,7 +25,8 @@ class CartController extends Controller
         Session::push('cart', $productIds);
 
         return view('cart', [
-            'categories' => $this->result
+            'categories' => $this->result,
+            'total' => $this->total
             ]);
     }
 }
