@@ -6,6 +6,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\CheckoutController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\QueryController;
 
@@ -37,3 +38,6 @@ Route::get('/contact', [ContactController::class, 'index']);
 
 Route::get('/about', [QueryController::class, 'getCategory']);
 Route::get('/about', [AboutController::class, 'index']);
+
+Route::get('/checkout', [QueryController::class, 'getCategory']);
+Route::get('/checkout', [CheckoutController::class, 'index']);

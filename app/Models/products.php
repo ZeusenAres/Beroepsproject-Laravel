@@ -5,8 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Support\Facades\Session;
 use App\Models\Categories;
 use App\Models\Brands;
+use phpDocumentor\Reflection\Types\This;
 
 class Products extends Model
 {

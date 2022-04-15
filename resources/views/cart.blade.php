@@ -22,7 +22,9 @@
         @endforeach
         <tr>
             <td>
-                <h3><b>Totaal</b></h3>
+                <h3>
+                    <b>Totaal</b>
+                </h3>
             </td>
         </tr>
         <tr>
@@ -37,8 +39,11 @@
                     <input name="empty-cart" type="submit" value="Delete cart" />
                 </form>
                 @if(isset($_GET['empty-cart']))
-                    <?php Session::flush('cart') ?>
+                    <?php Session::flush('cart'); ?>
                 @endif
+            </td>
+            <td>
+                <a href="{{url('checkout?balance=' . $total)}}">Checkout</a>
             </td>
         </tr>
     </table>
