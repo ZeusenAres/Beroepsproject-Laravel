@@ -5,10 +5,16 @@
 </head>
 <body>
     @include('Header.header')
-    <h1>Thank you for shopping at Diverse Luxury!</h1>
-    {{ '€' . $balance . ',-' }}
-    @if($balance != null)
-    <?php Session::flush('cart'); ?>
+    @if($balance >= 0.1)
+        <h1>Thank you for shopping at Diverse Luxury Goods!</h1>
+        {{ "Your balance is: €$balance,-" }}
+        @if($balance != null)
+            <?php Session::flush('cart'); ?>
+        @endif
+    @endif
+
+    @if($balance < 0.1)
+        <h1>It seems your shopping cart is empty</h1>
     @endif
 </body>
 </html>

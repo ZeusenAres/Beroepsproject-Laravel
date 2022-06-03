@@ -13,8 +13,6 @@ class CartController extends Controller
 
     private $total;
 
-    private $redirectUrl;
-
     public function __construct()
     {
         $this->result = Categories::all();
